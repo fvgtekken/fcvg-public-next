@@ -39,8 +39,6 @@ jobs:
         working-directory: ${{ github.workspace }}  
       - name: Copy compose.yml to remote server
         run: scp compose.yml ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}
-      - name: Copy nginx file to remote server
-        run:  scp -r nginx/nginx.conf ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}/nginx
       - name: connect and pull
         run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && docker compose pull && docker compose up -d && exit"
       - name: cleanup
