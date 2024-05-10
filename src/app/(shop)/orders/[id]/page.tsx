@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import { Title } from '@/components';
 import { initialData } from '@/seed/seed';
 import Image from 'next/image';
@@ -21,7 +19,7 @@ interface Props {
 }
 
 
-export default function ( { params }: Props ) {
+export default function OrdersId ( { params }: Props ) {
 
   const { id } = params;
 
