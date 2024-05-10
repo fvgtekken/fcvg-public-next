@@ -7,8 +7,7 @@
     "dev:turbo": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "seed": "ts-node src/seed/seed-database.ts"
+    "lint": "next lint"
   },
   "dependencies": {
     "@prisma/client": "^5.5.2",
