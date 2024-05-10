@@ -1,9 +1,19 @@
-# React + TypeScript + Vite
-First test
-https://www.bogotobogo.com/DevOps/Docker/Docker-Compose-Nginx-Reverse-Proxy-Multiple-Containers.php
-Test
+# Descripción
 
 
-echo $CR_PAT | docker login ghcr.io -u fvgtekken --password-stdin
 
-docker build . -t ghcr.io/fvgtekken/fcvg-public-next:latest && docker push ghcr.io/fvgtekken/fcvg-public-next:latest
+## Correr en dev
+
+
+1. Clonar el repositorio.
+2. Crear una copia del ```.env.template``` y renombrarlo a ```.env``` y cambiar las variables de entorno.
+3. Instalar dependencias ```npm install```
+4. Levantar la base de datos ```docker compose up -d```
+5. Correr las migraciones de Primsa ```npx prisma migrate dev````
+6. Ejecutar seed ```npm run seed```
+7. Correr el proyecto ```npm run dev```
+
+
+
+
+## Correr en prod
