@@ -1,7 +1,7 @@
 import { PageNotFound } from '@/components';
 
 
-export default function Page404() {
+export default function GenderNotFoundPage() {
 
 
   return (

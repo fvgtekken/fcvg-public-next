@@ -12,7 +12,7 @@ const productsInCart = [
 ];
 
 
-export default function Checkout() {
+export default function CheckoutPage() {
   return (
     <div className="flex justify-center items-center mb-72 px-10 sm:px-0">
 
@@ -23,7 +23,7 @@ export default function Checkout() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
 
-        
+          {/* Carrito */ }
           <div className="flex flex-col mt-5">
             <span className="text-xl">Ajustar elementos</span>
             <Link href="/cart" className="underline mb-5">
@@ -32,7 +32,7 @@ export default function Checkout() {
 
 
 
-      
+            {/* Items */ }
             {
               productsInCart.map( product => (
 
@@ -65,7 +65,7 @@ export default function Checkout() {
 
 
 
-   
+          {/* Checkout - Resumen de orden */ }
           <div className="bg-white rounded-xl shadow-xl p-7">
 
             <h2 className="text-2xl mb-2">Dirección de entrega</h2>
@@ -79,7 +79,7 @@ export default function Checkout() {
               <p>123.123.123</p>
             </div>
 
-         
+            {/* Divider */ }
             <div className="w-full h-0.5 rounded bg-gray-200 mb-10" />
 
 
@@ -105,9 +105,9 @@ export default function Checkout() {
             <div className="mt-5 mb-2 w-full">
 
               <p className="mb-5">
-             
+                {/* Disclaimer */ }
                 <span className="text-xs">
-                  Al hacer clic en Colocar orden, aceptas nuestros <a href="#" className="underline">términos y condiciones</a> y <a href="#" className="underline">política de privacidad</a>
+                  Al hacer clic en &quot;Colocar orden&quot;, aceptas nuestros <a href="#" className="underline">términos y condiciones</a> y <a href="#" className="underline">política de privacidad</a>
                 </span>
               </p>
 
