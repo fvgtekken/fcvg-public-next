@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://gresYanqueFede:p_ltgresl544Yan.queFede!s@fcvg-postgres-db:5432/teslo-shop?schema=public" //env("DATABASE_URL")
+  url = env("DATABASE_URL")
 }
 
 enum Size {
