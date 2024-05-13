@@ -1,3 +1,5 @@
+export type Gender = "men" | "women" | "kid" | "unisex"
+
 export interface SeedProduct {
   description: string;
   images: string[];
@@ -8,11 +10,14 @@ export interface SeedProduct {
   tags: string[];
   title: string;
   type: ValidTypes;
-  gender: 'men' | 'women' | 'kid' | 'unisex';
+  gender: Gender;
 }
 
 type ValidSizes = 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL' | 'XXXL';
 type ValidTypes = 'shirts' | 'pants' | 'hoodies' | 'hats';
+
+
+
 
 interface SeedData {
   categories: string[];
