@@ -5,10 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "dev:turbo": "next dev --turbo",
-    "build": "yarn run primsa:deploy && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prisma:deploy" :"yarn prisma generate",
     "seed": "ts-node src/seed/seed-database.ts",
     "postinstall": "prisma generate"
   },
