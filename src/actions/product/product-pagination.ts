@@ -1,6 +1,7 @@
 "use server";
 
 import prisma from "@/lib/prisma";
+import { SeedProduct } from "@/seed/seed";
 //import { Gender } from "@prisma/client";
 
 
@@ -52,9 +53,9 @@ export const getPaginatedProductsWithImages = async ({
     return {
       currentPage: page,
       totalPages: totalPages,
-      products: products.map((product) => ({
+      products: products.map((product:any) => ({
         ...product,
-        images: product.ProductImage.map((image) => image.url),
+        images: product.ProductImage.map((image:any) => image.url),
       })),
     };
   } catch (error) {
