@@ -20,9 +20,8 @@ RUN \
 FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
-COPY --from=deps /app/prisma ./prisma
 COPY . .
-
+RUN yarn run prisma generate
 
 
 # Next.js collects completely anonymous telemetry data about general usage.
