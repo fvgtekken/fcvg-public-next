@@ -3,7 +3,7 @@ services:
     container_name: fcvg-public-next
     image: ghcr.io/fvgtekken/fcvg-public-next:latest
     environment:
-    DATABASE_URL: ${DATABASE_URL}
+      DATABASE_URL: ${DATABASE_URL}
     ports:
       - 5000:5000
     volumes:
