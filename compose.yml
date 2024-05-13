@@ -9,9 +9,13 @@ services:
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt
     networks:
-      - my-network-front   
+      - my-network-next-front   
+      - my-network-postgres
       
 networks:
-  my-network-front:
+  my-network-next-front:
+    external: true
     name: default-network-front
-    driver: bridge
+  my-network-postgres:
+    external: true
+    name: default-network-postgres  
