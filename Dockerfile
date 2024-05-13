@@ -24,6 +24,10 @@ COPY . .
 RUN yarn run prisma generate
 
 
+# DataDB
+ARG DATABASE_URL
+ENV DATABASE_URL=$DATABASE_URL
+
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
