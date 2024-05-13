@@ -3,10 +3,13 @@
 import prisma from "@/lib/prisma";
 //import { Gender } from "@prisma/client";
 
+
+type Gender = "men" | "women" | "kid" | "unisex"
+
 interface PaginationOptions {
   page?: number;
   take?: number;
-  gender?: any;
+  gender?: Gender;
 }
 
 export const getPaginatedProductsWithImages = async ({
