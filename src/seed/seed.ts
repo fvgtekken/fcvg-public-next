@@ -1,5 +1,4 @@
 export interface SeedProduct {
-  ProductImage: any;
   description: string;
   images: string[];
   inStock: number;
