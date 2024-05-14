@@ -1,4 +1,5 @@
 "use server";
+
 import prisma from "@/lib/prisma";
 import { Gender } from "@prisma/client";
 
@@ -17,7 +18,7 @@ export const getPaginatedProductsWithImages = async ({
   if (page < 1) page = 1;
 
   try {
-    // 1. Obtener los productos por pagina
+    // 1. Obtener los productos
     const products = await prisma.product.findMany({
       take: take,
       skip: (page - 1) * take,

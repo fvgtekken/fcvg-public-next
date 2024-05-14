@@ -16,7 +16,6 @@ interface Props {
 export const Pagination = ({ totalPages }: Props) => {
 
   const pathname = usePathname();
-  console.log('pathname', pathname)
   const searchParams = useSearchParams();
 
   const pageString = searchParams.get('page') ?? 1;
