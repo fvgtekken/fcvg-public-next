@@ -4,6 +4,7 @@ import prisma from '@/lib/prisma';
 
 export const getProductBySlug = async( slug: string ) => {
 
+
   try {
 
     const product = await prisma.product.findFirst({
@@ -32,6 +33,7 @@ export const getProductBySlug = async( slug: string ) => {
     console.log(error);
     throw new Error('Error al obtener producto por slug');
   }
+
 
 
 }
