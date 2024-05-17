@@ -1,10 +1,11 @@
 "use client";
 import { useEffect, useState } from 'react';
+
 import Link from "next/link";
 import { IoSearchOutline, IoCartOutline } from "react-icons/io5";
+
 import { titleFont } from "@/config/fonts";
 import { useCartStore, useUIStore } from "@/store";
-
 
 export const TopMenu = () => {
 
@@ -17,7 +18,6 @@ export const TopMenu = () => {
     setLoaded(true);
   }, [])
   
-  let link = totalItemsInCart === 0 ?   '/empty' : '/cart'; 
 
 
   return (
@@ -61,13 +61,13 @@ export const TopMenu = () => {
         </Link>
 
         <Link href={
-          ( totalItemsInCart === 0)
+          ( (totalItemsInCart === 0 ) && loaded )
             ? '/empty'
-            : '/cart'
+            : "/cart"
         } className="mx-2">
           <div className="relative">
             {  ( loaded && totalItemsInCart > 0) && (
-              <span className="absolute text-xs px-1 rounded-full font-bold -top-2 -right-2 bg-blue-700 text-white">
+              <span className="fade-in absolute text-xs px-1 rounded-full font-bold -top-2 -right-2 bg-blue-700 text-white">
                 {totalItemsInCart}
               </span>
             )}

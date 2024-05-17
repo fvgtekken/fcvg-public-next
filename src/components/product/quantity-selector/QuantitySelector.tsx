@@ -1,7 +1,10 @@
 'use client';
+
 import { IoAddCircleOutline, IoRemoveCircleOutline } from 'react-icons/io5';
+
 interface Props {
   quantity: number;
+
   onQuantityChanged: ( value: number ) => void; 
 }
 
@@ -11,8 +14,10 @@ export const QuantitySelector = ( { quantity, onQuantityChanged }: Props ) => {
 
 
   const onValueChanged = ( value: number ) => {
+    
     if ( quantity + value < 1 ) return;
-      onQuantityChanged( quantity + value );
+
+    onQuantityChanged( quantity + value );
   };
 
 

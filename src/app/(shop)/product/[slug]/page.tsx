@@ -1,6 +1,8 @@
 export const revalidate = 604800; //7 días
 import { Metadata, ResolvingMetadata } from "next";
+
 import { notFound } from "next/navigation";
+
 import { titleFont } from "@/config/fonts";
 import {
   ProductMobileSlideshow,
