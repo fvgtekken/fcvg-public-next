@@ -17,3 +17,11 @@
 
 
 ## Correr en prod
+
+
+
+
+/*
+https://stackoverflow.com/questions/68941527/nextjs-next-auth-getsession-in-getserversideprops-with-https-not-work/
+
+*/
