@@ -26,7 +26,7 @@ export const OrderSummary = () => {
     }
 
 
-  },[ itemsInCart, loaded, router ])
+  },[ itemsInCart, loaded ])
 
 
 

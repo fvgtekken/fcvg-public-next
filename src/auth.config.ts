@@ -12,35 +12,11 @@ export const authConfig: NextAuthConfig = {
     signIn: '/auth/login',
     newUser: '/auth/new-account',
   },
-  providers: [
-    Credentials({
-      async authorize(credentials) {
-
-        const parsedCredentials = z
-          .object({ email: z.string().email(), password: z.string().min(6) })
-          .safeParse(credentials);
-
-
-          if ( !parsedCredentials.success ) return null;
-          const { email, password } = parsedCredentials.data;
-
-          // Buscar el correo
-          const user = await prisma.user.findUnique({ where: { email: email.toLowerCase() } });
-          if ( !user ) return null;
-
-          // Comparar las contraseñas
-          if( !bcryptjs.compareSync( password, user.password ) ) return null;
-
-          // Regresar el usuario sin el password
-          const { password: _, ...rest } = user;
-          return rest;
-      },
-    }),
-  ],
-
+  trustHost: true,
   callbacks: {
+
     authorized({ auth, request: { nextUrl } }) {
-      console.log("esto es authorized",{ auth });
+      console.log({ auth });
       // const isLoggedIn = !!auth?.user;
 
       // const isOnDashboard = nextUrl.pathname.startsWith('/dashboard');
@@ -52,22 +28,58 @@ export const authConfig: NextAuthConfig = {
       // }
       return true;
     },
+
     jwt({ token, user }) {
-      //console.log("jwt super chuper" ,token)
       if ( user ) {
         token.data = user;
       }
+
       return token;
     },
+
     session({ session, token, user }) {
       session.user = token.data as any;
-      console.log(' session.user',  session.user)
       return session;
     },
+
+
+
   },
 
 
 
+  providers: [
+
+    Credentials({
+      async authorize(credentials) {
+
+        const parsedCredentials = z
+          .object({ email: z.string().email(), password: z.string().min(6) })
+          .safeParse(credentials);
+
+
+          if ( !parsedCredentials.success ) return null;
+
+          const { email, password } = parsedCredentials.data;
+
+
+          // Buscar el correo
+          const user = await prisma.user.findUnique({ where: { email: email.toLowerCase() } });
+          if ( !user ) return null;
+
+          // Comparar las contraseñas
+          if( !bcryptjs.compareSync( password, user.password ) ) return null;
+
+
+          // Regresar el usuario sin el password
+          const { password: _, ...rest } = user;
+
+          return rest;
+      },
+    }),
+
+
+  ]
 }
 
 
