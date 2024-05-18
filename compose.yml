@@ -4,7 +4,6 @@ services:
     image: ghcr.io/fvgtekken/fcvg-public-next:latest
     environment:
       DATABASE_URL: ${DATABASE_URL}
-      AUTH_SECRET: ${AUTH_SECRET}
     ports:
       - 5000:5000
     volumes:

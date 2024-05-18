@@ -19,9 +19,7 @@ RUN \
 ARG DATABASE_URL
 ENV DATABASE_URL=$DATABASE_URL
 
-# Secret 
-ARG AUTH_SECRET
-ENV AUTH_SECRET=$AUTH_SECRET
+
 
 
 # Rebuild the source code only when needed
