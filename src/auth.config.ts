@@ -53,15 +53,15 @@ export const authConfig: NextAuthConfig = {
       return true;
     },
     jwt({ token, user }) {
-      console.log("jwt super chuper" ,token)
+      //console.log("jwt super chuper" ,token)
       if ( user ) {
         token.data = user;
       }
       return token;
     },
     session({ session, token, user }) {
-      console.log('session')
       session.user = token.data as any;
+      console.log(' session.user',  session.user)
       return session;
     },
   },
