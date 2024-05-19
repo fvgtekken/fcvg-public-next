@@ -17,3 +17,6 @@
 
 
 ## Correr en prod
+
+/*
+https://stackoverflow.com/questions/76869262/nextauth-js-error-next-autherrorclient-fetch-error-unexpected-token*/
