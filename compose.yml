@@ -5,8 +5,8 @@ services:
     environment:
       DATABASE_URL: ${DATABASE_URL}
       AUTH_SECRET: ${AUTH_SECRET}
-      NEXTAUTH_URL: "http://localhost:5000/api/auth"
-      NEXTAUTH_INTERNAL_URL: "http://localhost:5000"
+      NEXTAUTH_URL: "http://srv498956.hstgr.cloud"
+      NEXTAUTH_INTERNAL_URL: "http://fcvg-public-next:5000"
     ports:
       - 5000:5000
     volumes:
