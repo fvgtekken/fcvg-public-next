@@ -1,10 +1,13 @@
-# Descripción
+## HELP
+https://authjs.dev/reference/nextjs
 
+
+https://nextjs.org/learn/dashboard-app/adding-authentication
+
+https://stackoverflow.com/questions/68941527/nextjs-next-auth-getsession-in-getserversideprops-with-https-not-work/
 
 
 ## Correr en dev
-
-
 1. Clonar el repositorio.
 2. Crear una copia del ```.env.template``` y renombrarlo a ```.env``` y cambiar las variables de entorno.
 3. Instalar dependencias ```npm install```
@@ -16,7 +19,9 @@
 
 
 
+
 ## Correr en prod
 
 /*
-https://stackoverflow.com/questions/76869262/nextauth-js-error-next-autherrorclient-fetch-error-unexpected-token*/
+https://stackoverflow.com/questions/76869262/nextauth-js-error-next-autherrorclient-fetch-error-unexpected-token
+*/

@@ -46,8 +46,6 @@ jobs:
         run: |
          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" > .env
          echo "AUTH_SECRET=${{ secrets.AUTH_SECRET }}" >> .env
-         echo "NEXTAUTH_URL=${{ secrets.NEXTAUTH_URL }}" >> .env
-         echo "NEXTAUTH_INTERNAL_URL=${{ secrets.NEXTAUTH_INTERNAL_URL }}" >> .env
       - name: Copy .env
         run: |
           scp .env ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}
