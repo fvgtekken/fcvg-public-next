@@ -5,8 +5,6 @@ services:
     environment:
       DATABASE_URL: ${DATABASE_URL}
       AUTH_SECRET: ${AUTH_SECRET}
-      NEXTAUTH_URL: "https://srv498956.hstgr.cloud"
-      NEXTAUTH_INTERNAL_URL: "http://77.37.41.205:5000"
     ports:
       - 5000:5000
     volumes:
