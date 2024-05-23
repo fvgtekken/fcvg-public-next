@@ -23,8 +23,6 @@ ENV DATABASE_URL=$DATABASE_URL
 ARG AUTH_SECRET
 ENV AUTH_SECRET=$AUTH_SECRET
 
-ENV NEXT_SHARP_PATH=/app/node_modules/sharp
-
 
 # Rebuild the source code only when needed
 FROM base AS builder
