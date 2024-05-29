@@ -1,9 +1,12 @@
 "use client";
+
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { useForm } from 'react-hook-form';
 import clsx from 'clsx';
+
+
 import type { Address, Country } from '@/interfaces';
 import { useAddressStore } from '@/store';
 import { deleteUserAddress, setUserAddress } from '@/actions';
@@ -60,8 +63,9 @@ export const AddressForm = ({ countries, userStoredAddress = {} }: Props) => {
   const onSubmit = async( data: FormInputs ) => {
     
 
-    setAddress(data);
     const { rememberAddress, ...restAddress } = data;
+
+    setAddress(restAddress);
 
     if ( rememberAddress ) {
       await setUserAddress(restAddress, session!.user.id );

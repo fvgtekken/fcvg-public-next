@@ -2,6 +2,7 @@ import NextAuth, { type NextAuthConfig } from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 import bcryptjs from 'bcryptjs';
 import { z } from 'zod';
+
 import prisma from './lib/prisma';
 
 
@@ -12,6 +13,7 @@ export const authConfig: NextAuthConfig = {
     newUser: '/auth/new-account',
   },
   trustHost:true,
+
   callbacks: {
 
     authorized({ auth, request: { nextUrl } }) {
@@ -40,6 +42,9 @@ export const authConfig: NextAuthConfig = {
       session.user = token.data as any;
       return session;
     },
+
+
+
   },
 
 
