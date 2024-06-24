@@ -1,0 +1,35 @@
+.menuLabel {
+  font-size: 1.7rem;
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  color: white;
+}
+
+
+.item {
+  display: flex;
+  padding: 12px 18px;
+  align-items: center;
+  padding-left: var(--padding-left, 0);
+}
+
+
+.arrow {
+  display: flex;
+  height: 25px;
+  width: 35px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #fff;
+    transform: var(--transform, rotate(0deg));
+  }
+}

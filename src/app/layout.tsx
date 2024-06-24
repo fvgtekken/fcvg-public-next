@@ -1,27 +1,28 @@
-import type { Metadata } from "next";
-import { inter } from "@/config/fonts";
+import Head from 'next/head'
+import '../style/globals.scss'
+import StyledComponentsRegistry from './lib/registry'
 
-import "./globals.css";
-import { Provider } from "@/components";
 
-export const metadata: Metadata = {
-  title: {
-    template: "%s - Teslo | Shop",
-    default: "Home - Teslo | Shop",
-  },
-  description: "Una tienda virtual de productos",
-};
-
+export const metadata = {
+  title: 'Fcvg - Web Site',
+  description: 'My Profile',
+}
+ 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Provider>{children}</Provider>
+     <html lang="en">
+      <title>Fvg Dev</title>
+      <Head>
+        <meta http-equiv="Content-Security-Policy" content="script-src 'none'" key='security' />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"  key='viewport' />
+      </Head>
+      <body>
+        <StyledComponentsRegistry >{children}</StyledComponentsRegistry>
       </body>
     </html>
-  );
+  )
 }

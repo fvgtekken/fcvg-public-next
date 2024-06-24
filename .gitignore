@@ -3,7 +3,6 @@
 
 
 .env
-
 /postgres/
 
 # dependencies
@@ -40,3 +39,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+*storybook.log
