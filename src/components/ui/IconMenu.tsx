@@ -1,12 +1,10 @@
-
-
-interface IconProps extends React.HTMLAttributes<HTMLSpanElement> {
+interface Props extends React.HTMLAttributes<HTMLSpanElement> {
   onClick?:(arg?:any)=>void;
   rotateIcon :React.CSSProperties 
   className?: string;
 }
 
-const IconMenu: React.FC<IconProps> = ({ onClick, rotateIcon, className }) => {
+const IconMenu = ({ onClick, rotateIcon, className }:Props) => {
   
     return (
         <span className={`${className}`}  onClick={onClick} style={rotateIcon}>
