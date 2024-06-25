@@ -6,14 +6,12 @@
   color: white;
 }
 
-
 .item {
   display: flex;
   padding: 12px 18px;
   align-items: center;
   padding-left: var(--padding-left, 0);
 }
-
 
 .arrow {
   display: flex;
@@ -24,12 +22,28 @@
   cursor: pointer;
 
   &::after {
-    content: "";
+    content: '';
     width: 0;
     height: 0;
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
     border-top: 4px solid #fff;
     transform: var(--transform, rotate(0deg));
+  }
+}
+
+.subMenu {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 3s ease-out;
+
+  &.active {
+    max-height: 100vh;
+  }
+
+  &.close {
+    transition: max-height 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    max-height: 0vh;
   }
 }
