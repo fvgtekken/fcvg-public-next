@@ -1,6 +1,10 @@
 {
   "parser": "@typescript-eslint/parser",
   "extends": [
+    "next",
+    "prettier",
+    "eslint:recommended",
+    "plugin:@next/next/recommended",
     "next/core-web-vitals",
     "plugin:storybook/recommended",
     "plugin:@typescript-eslint/recommended",
@@ -35,6 +39,8 @@
     "jsx-a11y/anchor-is-valid": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "jsx-a11y/no-autofocus": "off",
-    "jsx-a11y/no-static-element-interactions": "off"
+    "jsx-a11y/no-static-element-interactions": "off",
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-page-custom-font": "off"
   }
 }

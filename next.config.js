@@ -1,5 +1,6 @@
 // next.config.js
-const path = require('path');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const path = require('path')
 /** @type {import('next').NextConfig} */
 
 const cspHeader = `
@@ -13,11 +14,12 @@ const cspHeader = `
     form-action 'self';
     frame-ancestors 'none';
     upgrade-insecure-requests;
-`;
+`
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
-});
+})
 
 module.exports = withBundleAnalyzer({
   // Resto de la configuración de Next.js aquí
@@ -32,19 +34,19 @@ module.exports = withBundleAnalyzer({
           },
         ],
       },
-    ];
+    ]
   },
   output: 'standalone',
   compiler: {
     styledComponents: true,
   },
-  webpack(config, { isServer }) {
+  webpack(config) {
     config.module.rules.push({
       test: /\.(js|jsx|ts|tsx)$/,
       loader: 'ignore-loader',
       include: [path.resolve(__dirname, 'src/stories')],
-    });
+    })
 
-    return config;
+    return config
   },
-});
+})
