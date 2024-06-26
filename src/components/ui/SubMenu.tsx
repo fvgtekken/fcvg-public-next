@@ -1,26 +1,40 @@
+import type { Menus, SubMenu as SubMenuData } from '@/utils/data'
 import { ListMenu } from './ListMenu'
 
 interface SubMenuProps {
   dept: number
-  data: any
-  toggle: boolean
+  data: SubMenuData[]
+  isActivated: boolean
   menuIndex: number
+  setActiveLabel: (arg: string) => void
+  activeLabel: { [key: string]: boolean }
 }
 
-export const SubMenu = ({ dept, data, toggle, menuIndex }: SubMenuProps) => {
+export const SubMenu = ({
+  dept,
+  data,
+  isActivated,
+  menuIndex,
+  activeLabel,
+  setActiveLabel,
+}: SubMenuProps) => {
   dept = dept + 1
 
   return (
-    <ul className={`subMenu ${toggle ? 'active' : 'close'}`}>
-      {data.map((menu: any, index: number) => {
+    <ul className={`subMenu ${isActivated ? 'active' : 'close'}`}>
+      {data.map((data: SubMenuData, index: number) => {
         const menuName: string = `sidebar-submenu-${dept}-${menuIndex}-${index}`
 
         return (
           <ListMenu
-            dept={dept}
-            data={menu}
-            hasSubMenu={menu.submenu}
-            menuName={menuName}
+            {...{
+              activeLabel,
+              setActiveLabel,
+              dept,
+              menuName,
+              data,
+            }}
+            hasSubMenu={!!data.submenu}
             key={menuName}
             menuIndex={index}
           />

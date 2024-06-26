@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react'
+import { siteFont } from '@/config/fonts'
 import '../../style/components/ui/containerMenu.scss'
 
 interface Props {
@@ -7,7 +8,9 @@ interface Props {
 }
 
 const ContainerMenu = ({ children, className }: Props) => {
-  return <aside className={className}>{children}</aside>
+  return (
+    <aside className={`${className} ${siteFont.className}`}>{children}</aside>
+  )
 }
 
 export default ContainerMenu

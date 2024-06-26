@@ -1,20 +1,22 @@
+'use client'
 import React from 'react'
-import type { Menus } from '@/utils/data'
+import type { Menus, SubMenu } from '@/utils/data'
 import { ListMenu } from './ListMenu'
+import { useActiveLabel } from '@/hooks/useActiveLabel'
 
 const MultiMenus = ({ menus }: { menus: Menus[] }) => {
+  const { activeLabel, setActiveLabel } = useActiveLabel('Menu 1')
+
   return (
     <ul>
-      {menus.map((menu: any, index: number) => {
+      {menus.map((menu: SubMenu, index: number) => {
         const dept = 1
         const menuName: string = `sidebar-menu-${dept}-${index}`
-
         return (
           <ListMenu
-            dept={dept}
+            {...{ activeLabel, setActiveLabel, dept, menuName }}
             data={menu}
-            hasSubMenu={menu.submenu}
-            menuName={menuName}
+            hasSubMenu={!!menu.submenu}
             key={menuName}
             menuIndex={index}
           />

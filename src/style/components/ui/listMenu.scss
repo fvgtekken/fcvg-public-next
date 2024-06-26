@@ -1,9 +1,22 @@
 .menuLabel {
+  color: #b8afaf;
   font-size: 1.7rem;
   width: 100%;
   display: block;
   cursor: pointer;
-  color: white;
+  transition: color 0.3s ease;
+  &:hover {
+    color: #fffefd;
+  }
+  &.active {
+    color: #fffefd;
+  }
+
+  &.default {
+    color: #b8afaf;
+  }
+
+  color: var(--color, #b8afaf);
 }
 
 .item {
@@ -15,21 +28,12 @@
 
 .arrow {
   display: flex;
-  height: 25px;
-  width: 35px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-
-  &::after {
-    content: '';
-    width: 0;
-    height: 0;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 4px solid #fff;
-    transform: var(--transform, rotate(0deg));
-  }
+  color: white;
+  font-size: 1.7rem;
+  transform: var(--transform, rotate(0deg));
 }
 
 .subMenu {
@@ -43,7 +47,6 @@
 
   &.close {
     transition: max-height 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-
     max-height: 0vh;
   }
 }

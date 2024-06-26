@@ -4,11 +4,12 @@ interface Props {
   onClick?: (arg: any) => void
   className: string
   label: string
+  style?: React.CSSProperties
 }
 
-const LabelMenu = ({ onClick, className, label }: Props) => {
+const LabelMenu = ({ onClick, className, label, style }: Props) => {
   return (
-    <span className={`${className}`} onClick={onClick}>
+    <span style={style} className={`${className}`} onClick={onClick}>
       {label}
     </span>
   )
